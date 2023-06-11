@@ -4,7 +4,9 @@ const fs = require("fs");
 const { Webhook, MessageBuilder } = require("discord-webhook-node");
 
 function run() {
-  const hook = new Webhook("");
+  const WEBHOOK_URL = "";
+
+  const hook = new Webhook(WEBHOOK_URL);
 
   let pageUrl =
     "https://www.ikea.com/ro/ro/p/markus-scaun-rotativ-vissle-gri-inchis-70261150/";
