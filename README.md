@@ -9,7 +9,7 @@ It *should* also work with any product on the Ikea's website, but i only tested 
 ### Great, how do i install/run this?
 1. Clone the repo
 2. Run `npm install`
-3. Put your Discord webhook url in the WEBHOOK_URL variable on line 7
+3. Put your Discord webhook url in the `WEBHOOK_URL` variable on line 7
 4. Run `node main.js`
 5. Done!
 
