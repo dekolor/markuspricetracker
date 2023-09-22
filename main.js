@@ -4,7 +4,7 @@ const fs = require("fs");
 const { Webhook, MessageBuilder } = require("discord-webhook-node");
 
 function run() {
-  const WEBHOOK_URL = "";
+  const WEBHOOK_URL = "https://discord.com/api/webhooks/1117535745729630421/WWRtv31zVFRK8cKZKZ75xhDzDjk8g8ul6KQ6JaS3xTIqnS35Nqeo75JlFAsnn5zSbQGQ";
 
   const hook = new Webhook(WEBHOOK_URL);
 
@@ -14,7 +14,7 @@ function run() {
   axios.get(pageUrl).then((response) => {
     const $ = cheerio.load(response.data);
     let price = $(
-      "#pip-buy-module-content > div.pip-temp-price-module.pip-temp-price-module--informational.pip-temp-price-module--small.pip-temp-price-module--regular.js-price-package > div.pip-temp-price-module__price > div > span > span:nth-child(1) > span.pip-temp-price__integer"
+      "#pip-buy-module-content > div.js-price-package.pip-price-package > div.pip-temp-price-module.pip-temp-price-module--small.pip-temp-price-module--none > div.pip-temp-price-module__price > div > span > span:nth-child(1) > span.pip-temp-price__integer"
     ).text();
 
     let thumbnail = $(
@@ -22,7 +22,7 @@ function run() {
     ).attr("src");
 
     let productTitle = $(
-      "#pip-buy-module-content > div.pip-temp-price-module.pip-temp-price-module--informational.pip-temp-price-module--small.pip-temp-price-module--regular.js-price-package > div.pip-temp-price-module__information > div > span > h1 > div > div.pip-header-section__container-text > span.pip-header-section__title--big.notranslate"
+      "#pip-buy-module-content > div.js-price-package.pip-price-package > div.pip-temp-price-module.pip-temp-price-module--small.pip-temp-price-module--none > div.pip-temp-price-module__information > div > span > h1 > div > div.pip-header-section__container-text > span.pip-header-section__title--big.notranslate"
     ).text();
 
     fs.readFile("data.json", "utf8", (err, data) => {
